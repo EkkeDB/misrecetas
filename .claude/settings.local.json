@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(django-admin startproject:*)",
+      "Bash(python:*)",
+      "Bash(docker-compose exec backend pip install:*)",
+      "Bash(make migrate:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run build:*)",
+      "Bash(timeout 10s npm run dev)",
+      "Bash(npm run lint)",
+      "Bash(grep:*)",
+      "Bash(ls:*)",
+      "Bash(make:*)",
+      "Bash(docker-compose logs:*)",
+      "Bash(docker-compose restart:*)",
+      "Bash(docker-compose exec:*)",
+      "Bash(curl:*)",
+      "Bash(# Test the user profile endpoint with the cookies\ncurl http://localhost:8000/api/auth/user/ \\\n  -b cookies_new.txt \\\n  -H \"Content-Type: application/json\")",
+      "Bash(find:*)",
+      "Bash(mkdir:*)",
+      "Bash(ss:*)",
+      "Bash(pkill:*)",
+      "Bash(kill:*)",
+      "Bash(PORT=3000 npm run dev)",
+      "Bash(sudo fuser:*)",
+      "Bash(npm run dev:*)"
+    ],
+    "deny": []
+  }
+}
