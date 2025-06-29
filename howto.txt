@@ -1,0 +1,326 @@
+================================================================================
+                    FAMILY RECIPES & STRETCHES APP - HOW TO USE
+================================================================================
+
+This guide will walk you through setting up and using your personal recipe
+and stretching app from start to finish.
+
+================================================================================
+🚀 INITIAL SETUP (First Time Only)
+================================================================================
+
+1. PREREQUISITES
+   - Make sure Docker and Docker Compose are installed on your system
+   - Make sure you have Make installed (usually comes with most systems)
+
+2. BUILD THE APPLICATION
+   Open terminal/command prompt in the project folder and run:
+   
+   make build
+   
+   This will download and build all the necessary containers. First time will 
+   take a few minutes.
+
+3. START THE APPLICATION
+   
+   make up
+   
+   This starts all services (database, backend, frontend) in the background.
+
+4. SET UP THE DATABASE
+   
+   make migrate
+   
+   This creates all the necessary database tables.
+
+5. CREATE YOUR ADMIN ACCOUNT
+   
+   make createsuperuser
+   
+   Follow the prompts to create your account:
+   - Username: Choose any username (e.g., "admin", "yourname")
+   - Email: Your email address (can be fake for personal use)
+   - Password: Choose a secure password
+   - Confirm password
+
+   IMPORTANT: Remember these credentials! You'll use them to log in.
+
+================================================================================
+🌐 ACCESSING THE APPLICATION
+================================================================================
+
+After setup, you can access:
+
+🎯 MAIN APP (What you'll use daily):
+   http://localhost:3000
+   
+   This is your main recipe and stretching app interface.
+
+🔧 ADMIN PANEL (For advanced management):
+   http://localhost:8000/admin
+   
+   Use your superuser credentials here to manage data directly.
+
+🛠️ API BACKEND (For developers):
+   http://localhost:8000
+   
+   This shows the API documentation and endpoints.
+
+================================================================================
+📱 USING THE APP - FIRST TIME
+================================================================================
+
+1. OPEN THE APP
+   Go to: http://localhost:3000
+   
+2. CREATE YOUR ACCOUNT
+   - Click "Create Account" or "Register"
+   - Fill in your information:
+     * First Name, Last Name (optional but recommended)
+     * Username (what you'll use to log in)
+     * Email address
+     * Password (make it secure!)
+   - Click "Create Account"
+   
+   You'll be automatically logged in and taken to the dashboard.
+
+3. ALTERNATIVE: Use Admin Account
+   If you prefer, you can also log in with the superuser account you created
+   during setup.
+
+================================================================================
+🏠 NAVIGATING THE APP
+================================================================================
+
+DASHBOARD (Main Page):
+- Shows overview of your recipes and stretches
+- Quick stats (total recipes, stretches, favorites)
+- Recent items you've added
+- Quick action buttons to add new content
+
+NAVIGATION BAR:
+- Dashboard: Return to main page
+- Recipes: View and manage all your recipes
+- Stretches: View and manage all your stretching routines
+- User menu: Profile and logout options
+
+================================================================================
+🍲 MANAGING RECIPES
+================================================================================
+
+ADDING A NEW RECIPE:
+1. Click "Recipes" in the navigation
+2. Click "Add Recipe" button
+3. Fill in the recipe details:
+   - Title: Name of the recipe
+   - Description: Brief description
+   - Prep/Cook Time: In minutes
+   - Servings: How many people it serves
+   - Category: Optional (or create new ones)
+   - Tags: Comma-separated (e.g., "italian, pasta, quick")
+   - Ingredients: One per line (e.g., "2 cups flour", "1 tsp salt")
+   - Instructions: Step-by-step cooking directions
+   - Photos: Upload multiple photos if desired
+   - Favorite: Check if this is a favorite recipe
+4. Click "Create Recipe"
+
+VIEWING RECIPES:
+- Browse all recipes on the recipes page
+- Use search bar to find specific recipes
+- Filter by category, favorites, etc.
+- Click on any recipe card to see full details
+
+RECIPE FEATURES:
+- Photo gallery with navigation arrows
+- Shopping list generation (download button)
+- Mark/unmark as favorite (heart icon)
+- Edit or delete (pencil and trash icons)
+
+================================================================================
+🧘 MANAGING STRETCHES
+================================================================================
+
+ADDING A NEW STRETCH:
+1. Click "Stretches" in navigation
+2. Click "Add Stretch" button
+3. Fill in stretch details:
+   - Title: Name of the stretch
+   - Description: What the stretch does
+   - Duration: How long to hold (in seconds)
+   - Repetitions: How many times to repeat
+   - Body Parts: Select which muscles/areas (click multiple)
+   - Difficulty: Beginner, Intermediate, or Advanced
+   - Video URL: YouTube or other video link (optional)
+   - Tags: Keywords for organization
+   - Instructions: Detailed how-to perform the stretch
+   - Photos: Upload demonstration photos
+   - Favorite: Mark if it's a go-to stretch
+4. Click "Create Stretch"
+
+VIEWING STRETCHES:
+- Browse all stretches on the stretches page
+- Filter by body part, difficulty level, favorites
+- Search by name or description
+- Click stretch cards for full details
+
+STRETCH FEATURES:
+- Photo gallery for proper form demonstration
+- Video links open in new tab
+- Body part tags for easy filtering
+- Difficulty level color coding
+- Timer suggestions for duration
+
+================================================================================
+🔍 SEARCH AND ORGANIZATION
+================================================================================
+
+SEARCH FEATURES:
+- Search recipes by title, ingredients, or description
+- Search stretches by name, body parts, or tags
+- Use filters to narrow down results
+
+ORGANIZATION:
+- Categories for recipes (create your own)
+- Body parts for stretches (predefined + custom)
+- Tags for both recipes and stretches
+- Favorites system for quick access
+
+================================================================================
+📱 MOBILE USE
+================================================================================
+
+The app is fully responsive and works great on phones and tablets:
+- Touch-friendly interface
+- Optimized layouts for small screens
+- Photo galleries work with swipe gestures
+- Can be added to home screen as a web app
+
+================================================================================
+🛠️ DAILY OPERATIONS
+================================================================================
+
+STARTING THE APP (When Computer Restarts):
+make up
+
+STOPPING THE APP:
+make down
+
+VIEWING LOGS (If Something Goes Wrong):
+make logs
+
+ACCESSING BACKEND FOR TROUBLESHOOTING:
+make shell-backend
+
+RESTARTING SERVICES:
+make restart
+
+CHECKING STATUS:
+make status
+
+================================================================================
+💡 TIPS AND TRICKS
+================================================================================
+
+RECIPE TIPS:
+- Add multiple photos showing different steps
+- Use clear, detailed ingredients (include measurements)
+- Break instructions into numbered steps in the text
+- Use tags liberally for easy searching later
+- Generate shopping lists before grocery trips
+
+STRETCH TIPS:
+- Include both demonstration and form photos
+- Link to video tutorials when available
+- Use specific body part tags
+- Set realistic durations for your fitness level
+- Create routines by saving multiple stretches as favorites
+
+ORGANIZATION TIPS:
+- Create categories like "Grandma's Recipes", "Quick Meals", "Desserts"
+- Use consistent tagging (e.g., "vegetarian", "30-min", "easy")
+- Mark frequently used items as favorites
+- Use search instead of scrolling through long lists
+
+================================================================================
+🔒 USER ACCOUNTS
+================================================================================
+
+MULTIPLE USERS:
+- Each person should create their own account
+- Data is private per user account
+- Admin account can see everything (use for family sharing)
+
+PASSWORD RESET:
+- Currently done through admin panel
+- Or create a new account if needed
+
+ACCOUNT MANAGEMENT:
+- Update profile through user menu
+- Change personal information as needed
+
+================================================================================
+🆘 TROUBLESHOOTING
+================================================================================
+
+APP WON'T START:
+1. Check if Docker is running
+2. Run: make down
+3. Run: make build
+4. Run: make up
+
+CAN'T LOG IN:
+1. Double-check username and password
+2. Try creating a new account
+3. Use admin credentials from setup
+
+PHOTOS NOT UPLOADING:
+1. Check file size (should be under 10MB)
+2. Use common formats (JPG, PNG, GIF)
+3. Try refreshing the page
+
+DATABASE ISSUES:
+1. Run: make migrate
+2. If problems persist: make down, then make up
+
+FORGOT ADMIN PASSWORD:
+1. Run: make shell-backend
+2. Run: python manage.py createsuperuser
+3. Create a new admin account
+
+GET HELP:
+1. Check logs with: make logs
+2. Look for error messages in red
+3. Try restarting with: make restart
+
+================================================================================
+🎯 QUICK REFERENCE
+================================================================================
+
+FIRST TIME SETUP:
+make build → make up → make migrate → make createsuperuser
+
+DAILY USE:
+1. make up
+2. Go to http://localhost:3000
+3. Log in and use the app
+4. make down when finished
+
+EMERGENCY RESTART:
+make down → make up
+
+COMMON URLS:
+- Main App: http://localhost:3000
+- Admin Panel: http://localhost:8000/admin
+- API Docs: http://localhost:8000
+
+================================================================================
+🎉 ENJOY YOUR APP!
+================================================================================
+
+You now have a complete personal recipe and stretching app! Start by adding
+a few favorite family recipes and some basic stretches. The more you use it,
+the more valuable it becomes as your personal collection grows.
+
+Happy cooking and stretching! 🍳🧘‍♀️
+
+================================================================================
